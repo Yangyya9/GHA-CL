@@ -77,8 +77,8 @@ class GHA_CL_MVC(nn.Module):
             loss_cls = self.cls_loss.get_loss(commonz, hs)
         else:
             loss_cls = 0
-        # 得到对比损失函数: λ1*实例级损失+λ2*类级损失
-        contrastive_loss = 0.5 * loss_ins + 0.5 * loss_cls
+        
+        contrastive_loss = 1 * loss_ins + 2 * loss_cls
 
         return contrastive_loss, loss_ins, loss_cls
 
