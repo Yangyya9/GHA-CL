@@ -51,6 +51,14 @@ if args.dataset == "Cifar100":
     args.fine_tune_epochs = 15
     seed = 10
 
+if args.dataset == "YouTubeFace":
+    args.fine_tune_epochs = 100
+    seed = 10
+
+if args.dataset == "Synthetic3d":
+    args.fine_tune_epochs = 100
+    seed = 10
+
 def setup_seed(seed):
     torch.manual_seed(seed)
     torch.cuda.manual_seed_all(seed)
